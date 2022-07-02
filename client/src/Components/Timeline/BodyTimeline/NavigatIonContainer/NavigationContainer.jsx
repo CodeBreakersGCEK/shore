@@ -3,7 +3,7 @@ import Suggestions from "./Suggestions/Suggestions";
 
 const NavigationContainer = () => {
   return (
-    <div className="self-start w-[calc(18vw-1rem)] top-[6rem] overflow-auto h-[calc(100vh-6rem)] fixed left-[3rem]">
+    <div className="self-start w-[15rem] top-[6rem] overflow-auto h-[calc(100vh-6rem)] fixed left-[3rem] phone:hidden max800:w-[12rem]">
       <Activities />
       <Suggestions />
     </div>

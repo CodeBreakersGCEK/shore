@@ -7,10 +7,10 @@ import Media from "./Media/Media";
 
 const PostUpload = () => {
   return (
-    <div className="bg-[#FCFDFD] px-[0.78rem] w-[90%] h-[auto] flex items-center ">
+    <div className="bg-[#FCFDFD] px-[0.78rem] w-[90%] h-[auto] flex items-center phone:hidden">
       <SpanImages
         spanClass="self-start pt-[0.9rem]"
-        imgClass="h-[2.2rem] w-[2.2rem] object-cover rounded-[50%] aspect-square"
+        imgClass="h-[2.2rem] min-w-[2.2rem] object-cover rounded-[50%] aspect-square"
         url={profile}
         alt="Profile"
       />
@@ -18,7 +18,7 @@ const PostUpload = () => {
         <input
           type="text"
           name="PostText"
-          className="bg-slate-100 border-[1px] border-[black] w-[40vw] h-[2.2rem] p-[0.3rem]"
+          className="bg-slate-100 border-[1px] border-[black] w-[40rem]    h-[2.2rem] p-[0.3rem] max1200:w-[25rem] tablet:min-w-[10rem]  tablet:w-[15rem] tablet:max-w-[30rem]"
           placeholder="Type Here..."
         />
         <ul className="flex text-[0.75rem] mt-[0.7rem] justify-around font-[600]">
