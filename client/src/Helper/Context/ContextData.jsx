@@ -8,6 +8,8 @@ const ContextData = createContext({
   userObject: {
     name: "Harsh",
     setName: () => {},
+    username: "__airborn",
+    setUsername: () => {},
   },
 });
 

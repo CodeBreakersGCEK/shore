@@ -2,7 +2,7 @@ import Timeline from "./Components/Timeline/Timeline";
 
 const App = () => {
   return (
-    <div className="bg-cyan-900 min-h-screen">
+    <div className="bg-[#E5E5E5] min-h-screen">
       {/* <Profile /> */}
       <Timeline/>
     </div>

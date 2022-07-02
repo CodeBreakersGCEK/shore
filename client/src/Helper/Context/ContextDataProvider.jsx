@@ -3,7 +3,8 @@ import ContextData from "./ContextData";
 
 const ContextDataProvider = (props) => {
   const [mode, setMode] = useState("dark");
-  const [name, setName] = useState("Harsh");
+  const [name, setName] = useState("Harsh Keshri jbsfjjksjrushuh");
+  const [username, setUsername] = useState("__airborn");
 
   const setModeFn = (data) => {
     setMode(data);
@@ -11,6 +12,10 @@ const ContextDataProvider = (props) => {
 
   const setNameFn = (data) => {
     setName(data);
+  };
+
+  const setUsernameFn = (data) => {
+    setUsername(data);
   };
 
   const Data = {
@@ -21,6 +26,8 @@ const ContextDataProvider = (props) => {
     userObject: {
       name: name,
       setName: setNameFn,
+      username: username,
+      setUsername: setUsernameFn,
     },
   };
 
