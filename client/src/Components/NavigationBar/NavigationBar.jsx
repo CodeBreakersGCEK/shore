@@ -7,7 +7,7 @@ import PeoplesSvg from "./../../Helper/Svgs/Navigation/Peoples.svg";
 const NavigationBar = () => {
   return (
     <nav className="bg-[#155E75] flex items-center justify-between py-0 px-4 w-screen h-[3rem] fixed z-10">
-      <div className="logo text-[1.7rem]">Shore</div>
+      <div className="logo text-[#A5FFD6] text-[1.7rem]">Shore</div>
       <SpanImages
         spanClass=""
         imgClass="h-[2.7rem] w-[2.7rem] object-cover rounded-[50%]"

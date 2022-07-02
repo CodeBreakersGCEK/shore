@@ -18,7 +18,7 @@ const PostUpload = () => {
         <input
           type="text"
           name="PostText"
-          className="bg-slate-100 border-[1px] border-[black] w-[40vw] h-[2.2rem]"
+          className="bg-slate-100 border-[1px] border-[black] w-[40vw] h-[2.2rem] p-[0.3rem]"
           placeholder="Type Here..."
         />
         <ul className="flex text-[0.75rem] mt-[0.7rem] justify-around font-[600]">

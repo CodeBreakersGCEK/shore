@@ -3,7 +3,7 @@ import BodyTimeline from "./BodyTimeline/BodyTimeline";
 
 const Timeline = () => {
   return (
-    <div>
+    <div className="bodyDisplay">
       <NavigationBar />
       <BodyTimeline/>
     </div>
