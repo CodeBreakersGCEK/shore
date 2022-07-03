@@ -1,11 +1,11 @@
 import React from "react";
+import Navbar from "./Navbar";
 
 const Layout = ({ children }) => {
   return (
     <div>
-      Navbar
-      {children}
-      Footer
+      <Navbar />
+      <div className="pt-[2rem] h-[100vh] overflow-hidden ">{children}</div>
     </div>
   );
 };

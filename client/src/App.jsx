@@ -1,16 +1,19 @@
 import { Routes, Route } from "react-router-dom";
-import Layout from "./Layout";
+import ContextProvider from "./Context/ContextProvider";
+import Layout from "./Layout/index";
 
 import { Home, NotFound, Profile } from "./pages";
 
 const App = () => {
   return (
     <Layout>
-      <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/profile' element={<Profile />} />
-        <Route path='*' element={<NotFound />} />
-      </Routes>
+      <ContextProvider>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </ContextProvider>
     </Layout>
   );
 };
