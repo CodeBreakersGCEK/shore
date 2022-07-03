@@ -60,70 +60,76 @@ const NavContainer = () => {
             className="w-[2rem] h-[2rem] object-cover rounded-[0.3rem]"
           />
           <div className="flex flex-col overflow-hidden ml-[0.5rem] text-fontPrimary2">
-            <span className="text-[0.8rem] font-bold">{UserCtx.name}</span>
-            <span className="w-[6rem] text-[0.6rem]">@{UserCtx.id}</span>
+            <span className="text-[1rem] font-bold max:1000text-[0.8rem]">
+              {UserCtx.name}
+            </span>
+            <span className="w-[6rem] text-[0.8rem]">@{UserCtx.id}</span>
           </div>
         </div>
       </Link>
       {/* navigating Container */}
-      <ul className=" bg-foreground mt-[1rem]  rounded-[0.4rem] overflow-hidden">
+      <ul className=" bg-foreground mt-[1.7rem]  rounded-[0.4rem] overflow-hidden">
         {/* Home component */}
         <li
-          className="flex items-center hover:bg-fontSecondary p-[0.6rem] pl-[0.53rem] hover:cursor-pointer hover:border-l-[3px] "
+          className="flex items-center hover:bg-fontSecondary p-[1.1rem]  hover:cursor-pointer hover:border-l-[3px] "
           onMouseEnter={HomeHoverToggleFn}
           onMouseLeave={HomeHoverToggleFn}
         >
-          <IconContext.Provider value={{ size: "1.3rem", color: homeHover }}>
+          <br className="h-[100px]  bg-[#e6e6e6]" />
+          <IconContext.Provider value={{ size: "1.7rem", color: homeHover }}>
             <BiHomeAlt />
           </IconContext.Provider>
-          <p className={"ml-[0.5rem] text-[0.9rem] text-[" + homeHover + "]"}>
+          <p className={"ml-[0.7rem] text-[1rem] text-[" + homeHover + "]"}>
             Home
           </p>
         </li>
+        <li className="flex justify-center">
+          <hr className="h-[1px] w-[80%] bg-[#e6e6e6] border-0" />
+        </li>
         {/* Explore component */}
         <li
-          className="flex items-center hover:bg-fontSecondary p-[0.6rem] pl-[0.5rem] hover:cursor-pointer hover:border-l-[3px]  "
+          className="flex items-center hover:bg-fontSecondary p-[1.1rem] hover:cursor-pointer hover:border-l-[3px] "
           onMouseEnter={ExploreHoverToggleFn}
           onMouseLeave={ExploreHoverToggleFn}
         >
-          <IconContext.Provider value={{ size: "1.3rem", color: exploreHover }}>
+          <IconContext.Provider value={{ size: "1.7rem", color: exploreHover }}>
             <MdOutlineExplore />
           </IconContext.Provider>
-          <p
-            className={"ml-[0.5rem] text-[0.9rem] text-[" + exploreHover + "]"}
-          >
+          <p className={"ml-[0.7rem] text-[1rem] text-[" + exploreHover + "]"}>
             Explore
           </p>
         </li>
+        <li className="flex justify-center">
+          <hr className="h-[1px] w-[80%] bg-[#e6e6e6] border-0" />
+        </li>
         {/* Profile component */}
         <li
-          className="flex items-center hover:bg-fontSecondary p-[0.6rem] hover:cursor-pointer hover:border-l-[3px] "
+          className="flex items-center hover:bg-fontSecondary p-[1.1rem] hover:cursor-pointer hover:border-l-[3px] "
           onMouseEnter={ProfileHoverToggleFn}
           onMouseLeave={ProfileHoverToggleFn}
         >
-          <IconContext.Provider value={{ size: "1.1rem", color: profileHover }}>
+          <IconContext.Provider value={{ size: "1.6rem", color: profileHover }}>
             <VscAccount />
           </IconContext.Provider>
-          <p
-            className={"ml-[0.5rem] text-[0.9rem] text-[" + profileHover + "]"}
-          >
+          <p className={"ml-[0.7rem] text-[1rem] text-[" + profileHover + "]"}>
             Profile
           </p>
         </li>
+        <li className="flex justify-center">
+          <hr className="h-[1px] w-[80%] bg-[#e6e6e6] border-0" />
+        </li>
         {/* Settings component */}
         <li
-          className="flex items-center hover:bg-fontSecondary p-[0.6rem] pl-[0.58rem] hover:cursor-pointer hover:border-l-[3px] "
+          className="flex items-center hover:bg-fontSecondary p-[1.1rem] hover:cursor-pointer hover:border-l-[3px] "
           onMouseEnter={SettingsHoverToggleFn}
           onMouseLeave={SettingsHoverToggleFn}
         >
           <IconContext.Provider
-            value={{ size: "1.2rem", color: settingsHover }}
+            value={{ size: "1.7rem", color: settingsHover }}
           >
             <AiOutlineSetting />
           </IconContext.Provider>
-          <p
-            className={"ml-[0.5rem] text-[0.9rem] text-[" + settingsHover + "]"}
-          >
+          <p className={"ml-[0.7rem] text-[1rem] text-[" + settingsHover + "]"}>
             Settings
           </p>
         </li>

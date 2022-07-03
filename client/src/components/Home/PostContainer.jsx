@@ -8,9 +8,9 @@ const PostContainer = () => {
   const UserCtx = useContext(Context).user;
 
   return (
-    <div className="grow self-start min-w-[25rem] max-w-[75rem]  max-m-[3rem] min-m-[1rem] mx-[1.5vw] ">
+    <div className="grow self-start min-w-[25rem] max-w-[38rem]  max-m-[3rem] min-m-[1rem] mx-[3vw] ">
       {/* For Uploading the Content */}
-      <div className="h-[3rem] bg-foreground mx-[1rem] rounded-[0.4rem] flex justify-center items-center px-[0.5rem]">
+      <div className="h-[3.5rem] bg-foreground mx-[1rem] rounded-[0.4rem] flex justify-center items-center p-[0.8rem]">
         <img
           src={UserCtx.imageUrl}
           alt="Profile"
@@ -25,13 +25,13 @@ const PostContainer = () => {
           <IconContext.Provider value={{ size: "1.3rem", color: "white" }}>
             <BsArrowUpSquare />
           </IconContext.Provider>
-          <p className="text-[0.8rem] ml-[0.3rem] text-[white] font-semibold">
+          <p className="text-[1rem] ml-[0.3rem] text-[white] font-semibold">
             Post it
           </p>
         </button>
       </div>
       {/* Timeline for The Post */}
-      <ul className="h-[calc(100vh-8rem)] bg-background m-[1rem] overflow-auto">
+      <ul className="h-[calc(100vh-8rem)] bg-background mx-[1rem] mt-[1.7rem] overflow-auto">
         <Post
           id="1"
           name="Vegeta"

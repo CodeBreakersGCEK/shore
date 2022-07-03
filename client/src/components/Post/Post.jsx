@@ -5,7 +5,7 @@ import { IconContext } from "react-icons/lib/esm/iconContext";
 
 const Post = (props) => {
   return (
-    <li className="bg-foreground mb-[2rem] rounded-[0.4rem] p-[0.5rem] flex flex-col ">
+    <li className="bg-foreground mb-[2rem] rounded-[0.4rem] p-[0.8rem] flex flex-col ">
       <div>
         <div className="flex">
           <img
@@ -14,11 +14,11 @@ const Post = (props) => {
             className="w-[2rem] h-[2rem] object-cover rounded-[0.3rem]"
           />
           <div className="flex flex-col overflow-hidden ml-[0.5rem] text-fontPrimary2">
-            <span className="text-[0.8rem] font-bold">{props.name}</span>
-            <span className="w-[6rem] text-[0.6rem]">@{ props.userName}</span>
+            <span className="text-[1rem] font-bold">{props.name}</span>
+            <span className="w-[6rem] text-[0.8rem]">@{props.userName}</span>
           </div>
         </div>
-        <p className="text-[0.8rem] mb-[0.2rem]">{props.description}</p>
+        <p className="text-[1.1rem] mb-[0.2rem]">{props.description}</p>
       </div>
       <div className="flex flex-col justify-center">
         <img
@@ -26,15 +26,15 @@ const Post = (props) => {
           className="rounded-[0.3rem]"
           alt="Post Image"
         />
-        <div className="flex justify-around h-[3rem] border-b-[2px] border-background text-[0.7rem] font-semibold">
+        <div className="flex justify-around h-[3rem] border-b-[2px] border-background text-[1rem] font-semibold">
           <div className="flex items-center justify-center">
-            <IconContext.Provider value={{ size: "1rem" }}>
+            <IconContext.Provider value={{ size: "1.4rem" }}>
               <AiOutlineHeart />
             </IconContext.Provider>
             <p className="ml-[0.2rem]">{props.likes} Likes</p>
           </div>
           <div className="flex items-center justify-center">
-            <IconContext.Provider value={{ size: "1rem" }}>
+            <IconContext.Provider value={{ size: "1.4rem" }}>
               <BiComment />
             </IconContext.Provider>
             <p className="ml-[0.2rem]">{props.comments} Comments</p>
