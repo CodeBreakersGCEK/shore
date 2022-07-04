@@ -5,12 +5,12 @@ import { BiSearch } from "react-icons/bi";
 
 const Navbar = () => {
   return (
-    <div className=" bg-foreground fixed h-[3rem] w-[100vw] top-0 left-0 flex justify-between items-center px-[0.6rem]">
+    <div className=" bg-foreground fixed h-[3.2rem] w-[100vw] top-0 left-0 flex justify-between items-center px-[0.6rem]">
       <span className="text-primary text-[1.5rem]">Shore</span>
       {/* Input Area */}
-      <div className="relative flex items-center max500:hidden">
+      <div className="relative flex items-center max550:hidden">
         <input
-          className="border-[1px] border-[black] bg-background rounded-[0.2rem] h-[2.2rem] pl-[0.4rem] w-[22rem] text-[0.83rem] focus-within:bg-focusInput"
+          className="border-[1px] border-[#a3a3a3] bg-background rounded-[0.5rem] h-[2.2rem] pl-[0.4rem] w-[22rem] text-[0.83rem] poppinsText focus-within:bg-focusInput"
           type="text"
           placeholder="Search"
         />
@@ -25,7 +25,7 @@ const Navbar = () => {
         <IconContext.Provider value={{ size: "1.3rem", color: "white" }}>
           <AiOutlinePlusSquare />
         </IconContext.Provider>
-        <p className="text-[1rem] ml-[0.2rem] text-[white] font-semibold max500:hidden">
+        <p className="text-[1rem] ml-[0.2rem] text-[white] font-medium poppinsTextmax550:hidden">
           Upload
         </p>
       </button>

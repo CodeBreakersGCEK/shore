@@ -25,7 +25,7 @@ const PostContainer = () => {
           <IconContext.Provider value={{ size: "1.3rem", color: "white" }}>
             <BsArrowUpSquare />
           </IconContext.Provider>
-          <p className="text-[1rem] ml-[0.3rem] text-[white] font-semibold">
+          <p className="text-[1rem] ml-[0.3rem] text-[white] font-medium poppinsText">
             Post it
           </p>
         </button>

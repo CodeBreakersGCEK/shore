@@ -11,46 +11,47 @@ import { AiOutlineSetting } from "react-icons/ai";
 
 const NavContainer = () => {
   const UserCtx = useContext(Context).user;
-  const [homeHover, setHomeHover] = useState("black");
-  const [exploreHover, setExploreHover] = useState("black");
-  const [profileHover, setProfileHover] = useState("black");
-  const [settingsHover, setSettingsHover] = useState("black");
+  const noHoverColor = "#a3a3a3";
   const hoverColor = "#164E63";
+  const [homeHover, setHomeHover] = useState(noHoverColor);
+  const [exploreHover, setExploreHover] = useState(noHoverColor);
+  const [profileHover, setProfileHover] = useState(noHoverColor);
+  const [settingsHover, setSettingsHover] = useState(noHoverColor);
 
   const HomeHoverToggleFn = () => {
-    if (homeHover === "black") {
+    if (homeHover === noHoverColor) {
       setHomeHover(hoverColor);
     } else {
-      setHomeHover("black");
+      setHomeHover(noHoverColor);
     }
   };
 
   const ExploreHoverToggleFn = () => {
-    if (exploreHover === "black") {
+    if (exploreHover === noHoverColor) {
       setExploreHover(hoverColor);
     } else {
-      setExploreHover("black");
+      setExploreHover(noHoverColor);
     }
   };
 
   const ProfileHoverToggleFn = () => {
-    if (profileHover === "black") {
+    if (profileHover === noHoverColor) {
       setProfileHover(hoverColor);
     } else {
-      setProfileHover("black");
+      setProfileHover(noHoverColor);
     }
   };
 
   const SettingsHoverToggleFn = () => {
-    if (settingsHover === "black") {
+    if (settingsHover === noHoverColor) {
       setSettingsHover(hoverColor);
     } else {
-      setSettingsHover("black");
+      setSettingsHover(noHoverColor);
     }
   };
 
   return (
-    <div className="self-start w-[15rem] ml-[3vw] justify-self-start max500:hidden ">
+    <div className="self-start w-[15rem] ml-[3vw] justify-self-start max550:hidden ">
       {/* Profile Container */}
       <Link to={`/profile`}>
         <div className="h-[5rem] bg-foreground  rounded-[0.4rem] flex justify-center items-center overflow-hidden">
@@ -59,11 +60,13 @@ const NavContainer = () => {
             alt="Profile"
             className="w-[2rem] h-[2rem] object-cover rounded-[0.3rem]"
           />
-          <div className="flex flex-col overflow-hidden ml-[0.5rem] text-fontPrimary2">
-            <span className="text-[1rem] font-bold max:1000text-[0.8rem]">
+          <div className="flex flex-col overflow-hidden ml-[0.5rem] text-fontPrimary2 poppinsText">
+            <span className="text-[0.95rem] font-bold max800:text-[0.7rem]">
               {UserCtx.name}
             </span>
-            <span className="w-[6rem] text-[0.8rem]">@{UserCtx.id}</span>
+            <span className="w-[6rem] text-[0.75rem] max800:text-[0.6rem] max800:w-[4rem]">
+              @{UserCtx.id}
+            </span>
           </div>
         </div>
       </Link>
@@ -75,11 +78,13 @@ const NavContainer = () => {
           onMouseEnter={HomeHoverToggleFn}
           onMouseLeave={HomeHoverToggleFn}
         >
-          <br className="h-[100px]  bg-[#e6e6e6]" />
+          <br className="h-[10px]  bg-[#e6e6e6]" />
           <IconContext.Provider value={{ size: "1.7rem", color: homeHover }}>
             <BiHomeAlt />
           </IconContext.Provider>
-          <p className={"ml-[0.7rem] text-[1rem] text-[" + homeHover + "]"}>
+          <p
+            className={`ml-[0.7rem] text-[1rem] text-[${homeHover}]  poppinsText `}
+          >
             Home
           </p>
         </li>
@@ -95,7 +100,9 @@ const NavContainer = () => {
           <IconContext.Provider value={{ size: "1.7rem", color: exploreHover }}>
             <MdOutlineExplore />
           </IconContext.Provider>
-          <p className={"ml-[0.7rem] text-[1rem] text-[" + exploreHover + "]"}>
+          <p
+            className={`ml-[0.7rem] text-[1rem] text-[${exploreHover}] poppinsText`}
+          >
             Explore
           </p>
         </li>
@@ -111,7 +118,9 @@ const NavContainer = () => {
           <IconContext.Provider value={{ size: "1.6rem", color: profileHover }}>
             <VscAccount />
           </IconContext.Provider>
-          <p className={"ml-[0.7rem] text-[1rem] text-[" + profileHover + "]"}>
+          <p
+            className={`ml-[0.7rem] text-[1rem] text-[${profileHover}] poppinsText`}
+          >
             Profile
           </p>
         </li>
@@ -129,7 +138,9 @@ const NavContainer = () => {
           >
             <AiOutlineSetting />
           </IconContext.Provider>
-          <p className={"ml-[0.7rem] text-[1rem] text-[" + settingsHover + "]"}>
+          <p
+            className={`ml-[0.7rem] text-[1rem] text-[${settingsHover}] poppinsText`}
+          >
             Settings
           </p>
         </li>

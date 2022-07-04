@@ -14,11 +14,11 @@ const Post = (props) => {
             className="w-[2rem] h-[2rem] object-cover rounded-[0.3rem]"
           />
           <div className="flex flex-col overflow-hidden ml-[0.5rem] text-fontPrimary2">
-            <span className="text-[1rem] font-bold">{props.name}</span>
-            <span className="w-[6rem] text-[0.8rem]">@{props.userName}</span>
+            <span className="text-[1rem] font-bold poppinsText">{props.name}</span>
+            <span className="w-[6rem] text-[0.8rem] poppinsText">@{props.userName}</span>
           </div>
         </div>
-        <p className="text-[1.1rem] mb-[0.2rem]">{props.description}</p>
+        <p className="text-[1.1rem] mb-[0.2rem] poppinsText">{props.description}</p>
       </div>
       <div className="flex flex-col justify-center">
         <img
@@ -26,24 +26,24 @@ const Post = (props) => {
           className="rounded-[0.3rem]"
           alt="Post Image"
         />
-        <div className="flex justify-around h-[3rem] border-b-[2px] border-background text-[1rem] font-semibold">
+        <div className="flex justify-around h-[3rem] border-b-[2px] border-background text-[1rem] font-normal">
           <div className="flex items-center justify-center">
-            <IconContext.Provider value={{ size: "1.4rem" }}>
+            <IconContext.Provider value={{ size: "1.4rem",color:"#a3a3a3" }}>
               <AiOutlineHeart />
             </IconContext.Provider>
-            <p className="ml-[0.2rem]">{props.likes} Likes</p>
+            <p className="ml-[0.2rem] mb-[0.2rem] text-[#a3a3a3] poppinsText">{props.likes} Likes</p>
           </div>
           <div className="flex items-center justify-center">
-            <IconContext.Provider value={{ size: "1.4rem" }}>
+            <IconContext.Provider value={{ size: "1.4rem" ,color:"#a3a3a3" }}>
               <BiComment />
             </IconContext.Provider>
-            <p className="ml-[0.2rem]">{props.comments} Comments</p>
+            <p className="ml-[0.2rem] mb-[0.2rem] text-[#a3a3a3] poppinsText">{props.comments} Comments</p>
           </div>
         </div>
       </div>
       <div className="flex mt-[0.5rem]">
         <input
-          className="bg-background w-[100%] mr-[0.4rem] rounded-[0.3rem] text-[0.8rem] pl-[0.4rem] focus-within:bg-focusInput"
+          className="bg-background w-[100%] mr-[0.4rem] rounded-[0.3rem] text-[0.8rem] pl-[0.4rem] poppinsText focus-within:bg-focusInput"
           type="text"
           placeholder="Comment!"
         />
