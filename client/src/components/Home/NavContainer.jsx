@@ -11,42 +11,55 @@ import { AiOutlineSetting } from "react-icons/ai";
 
 const NavContainer = () => {
   const UserCtx = useContext(Context).user;
-  const noHoverColor = "#a3a3a3";
+  const noHoverColor = "neutral-400";
+  const noHoverColorIcon = "#a3a3a3";
   const hoverColor = "#164E63";
   const [homeHover, setHomeHover] = useState(noHoverColor);
   const [exploreHover, setExploreHover] = useState(noHoverColor);
   const [profileHover, setProfileHover] = useState(noHoverColor);
   const [settingsHover, setSettingsHover] = useState(noHoverColor);
+  const [homeHoverIcon, setHomeHoverIcon] = useState(noHoverColorIcon);
+  const [exploreHoverIcon, setExploreHoverIcon] = useState(noHoverColorIcon);
+  const [profileHoverIcon, setProfileHoverIcon] = useState(noHoverColorIcon);
+  const [settingsHoverIcon, setSettingsHoverIcon] = useState(noHoverColorIcon);
 
   const HomeHoverToggleFn = () => {
     if (homeHover === noHoverColor) {
       setHomeHover(hoverColor);
+      setHomeHoverIcon(hoverColor);
     } else {
       setHomeHover(noHoverColor);
+      setHomeHoverIcon(noHoverColorIcon);
     }
   };
 
   const ExploreHoverToggleFn = () => {
     if (exploreHover === noHoverColor) {
       setExploreHover(hoverColor);
+      setExploreHoverIcon(hoverColor);
     } else {
       setExploreHover(noHoverColor);
+      setExploreHoverIcon(noHoverColorIcon);
     }
   };
 
   const ProfileHoverToggleFn = () => {
     if (profileHover === noHoverColor) {
       setProfileHover(hoverColor);
+      setProfileHoverIcon(hoverColor);
     } else {
       setProfileHover(noHoverColor);
+      setProfileHoverIcon(noHoverColorIcon);
     }
   };
 
   const SettingsHoverToggleFn = () => {
     if (settingsHover === noHoverColor) {
       setSettingsHover(hoverColor);
+      setSettingsHoverIcon(hoverColor);
     } else {
       setSettingsHover(noHoverColor);
+      setSettingsHoverIcon(noHoverColorIcon);
     }
   };
 
@@ -74,72 +87,78 @@ const NavContainer = () => {
       <ul className=" bg-foreground mt-[1.7rem]  rounded-[0.4rem] overflow-hidden">
         {/* Home component */}
         <li
-          className="flex items-center hover:bg-fontSecondary p-[1.1rem]  hover:cursor-pointer hover:border-l-[3px] "
+          className={`flex items-center hover:bg-fontSecondary p-[1.1rem]  hover:cursor-pointer hover:border-l-[3px] border-sky-800`}
           onMouseEnter={HomeHoverToggleFn}
           onMouseLeave={HomeHoverToggleFn}
         >
-          <br className="h-[10px]  bg-[#e6e6e6]" />
-          <IconContext.Provider value={{ size: "1.7rem", color: homeHover }}>
+          <IconContext.Provider
+            value={{ size: "1.7rem", color: homeHoverIcon }}
+          >
             <BiHomeAlt />
           </IconContext.Provider>
           <p
-            className={`ml-[0.7rem] text-[1rem] text-[${homeHover}]  poppinsText `}
+            className={`ml-[0.7rem] text-[1rem] text-${homeHover}  poppinsText `}
           >
             Home
           </p>
         </li>
         <li className="flex justify-center">
-          <hr className="h-[1px] w-[80%] bg-[#e6e6e6] border-0" />
+          <hr className="h-[1px] w-[80%] bg-neutral-300 border-0" />
         </li>
         {/* Explore component */}
         <li
-          className="flex items-center hover:bg-fontSecondary p-[1.1rem] hover:cursor-pointer hover:border-l-[3px] "
+          className={`flex items-center hover:bg-fontSecondary p-[1.1rem]  hover:cursor-pointer hover:border-l-[3px] border-sky-800`}
           onMouseEnter={ExploreHoverToggleFn}
           onMouseLeave={ExploreHoverToggleFn}
         >
-          <IconContext.Provider value={{ size: "1.7rem", color: exploreHover }}>
+          <IconContext.Provider
+            value={{ size: "1.7rem", color: exploreHoverIcon }}
+          >
             <MdOutlineExplore />
           </IconContext.Provider>
           <p
-            className={`ml-[0.7rem] text-[1rem] text-[${exploreHover}] poppinsText`}
+            className={`ml-[0.7rem] text-[1rem] text-${exploreHover} poppinsText`}
           >
             Explore
           </p>
         </li>
         <li className="flex justify-center">
-          <hr className="h-[1px] w-[80%] bg-[#e6e6e6] border-0" />
+          <hr className="h-[1px] w-[80%] bg-neutral-300 border-0" />
         </li>
         {/* Profile component */}
         <li
-          className="flex items-center hover:bg-fontSecondary p-[1.1rem] hover:cursor-pointer hover:border-l-[3px] "
+          className={`flex items-center hover:bg-fontSecondary p-[1.1rem]  hover:cursor-pointer hover:border-l-[3px] border-sky-800`}
           onMouseEnter={ProfileHoverToggleFn}
           onMouseLeave={ProfileHoverToggleFn}
         >
-          <IconContext.Provider value={{ size: "1.6rem", color: profileHover }}>
+          <IconContext.Provider
+            value={{ size: "1.6rem", color: profileHoverIcon }}
+          >
             <VscAccount />
           </IconContext.Provider>
           <p
-            className={`ml-[0.7rem] text-[1rem] text-[${profileHover}] poppinsText`}
+            className={`ml-[0.7rem] text-[1rem] text-${profileHover} poppinsText`}
           >
             Profile
           </p>
         </li>
         <li className="flex justify-center">
-          <hr className="h-[1px] w-[80%] bg-[#e6e6e6] border-0" />
+          <hr className="h-[1px] w-[80%] bg-neutral-300 border-0" />
         </li>
         {/* Settings component */}
         <li
-          className="flex items-center hover:bg-fontSecondary p-[1.1rem] hover:cursor-pointer hover:border-l-[3px] "
+          className={`flex items-center hover:bg-fontSecondary p-[1.1rem]  hover:cursor-pointer hover:border-l-[3px] border-sky-800`}
           onMouseEnter={SettingsHoverToggleFn}
           onMouseLeave={SettingsHoverToggleFn}
         >
           <IconContext.Provider
-            value={{ size: "1.7rem", color: settingsHover }}
+            value={{ size: "1.7rem", color: settingsHoverIcon }}
+            className={`${hoverColor}`}
           >
             <AiOutlineSetting />
           </IconContext.Provider>
           <p
-            className={`ml-[0.7rem] text-[1rem] text-[${settingsHover}] poppinsText`}
+            className={`ml-[0.7rem] text-[1rem] text-${settingsHover} poppinsText`}
           >
             Settings
           </p>
