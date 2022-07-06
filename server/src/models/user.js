@@ -1,4 +1,5 @@
 const { Schema, model } = require("mongoose");
+var jwt = require("jsonwebtoken");
 
 const userSchema = new Schema({
   firstName: {
@@ -15,6 +16,7 @@ const userSchema = new Schema({
     type: String,
     default: "",
     required: true,
+    unique: true,
   },
   email: {
     type: String,
@@ -30,5 +32,11 @@ const userSchema = new Schema({
     default: Date.now,
   },
 });
+
+userSchema.methods.getJwtToken = function () {
+  return jwt.sign({ id: this._id }, process.env.JWT_SECRET, {
+    expiresIn: "4h",
+  });
+};
 
 module.exports = model("User", userSchema);

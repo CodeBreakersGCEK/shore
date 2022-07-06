@@ -2,6 +2,17 @@
 const bcrypt = require("bcryptjs");
 const User = require("../models/user");
 
+const generateToken = (res, user) => {
+  const token = user.getJwtToken();
+
+  res
+    .status(200)
+    .cookie("token", token, {
+      httpOnly: true,
+    })
+    .json({ user, token });
+};
+
 exports.register = async (req, res) => {
   try {
     const { firstName, lastName, userName, email, password } = req.body;
@@ -19,6 +30,7 @@ exports.register = async (req, res) => {
 
     const encryptedPassword = await bcrypt.hash(password, 10);
 
+    //? save the user data in DB
     const user = await User.create({
       firstName,
       lastName,
@@ -27,7 +39,7 @@ exports.register = async (req, res) => {
       password: encryptedPassword,
     });
 
-    res.status(201).json(user);
+    generateToken(res, user);
   } catch (error) {
     console.log(error);
   }
@@ -48,8 +60,17 @@ exports.login = async (req, res) => {
 
     if (!isValidPassword) return res.status(400).send("Invalid password");
 
-    res.status(200).json(user);
+    generateToken(res, user);
   } catch (error) {
     console.log(error);
   }
+};
+
+exports.logout = (req, res) => {
+  res
+    .status(200)
+    .clearCookie("token", null, {
+      httpOnly: true,
+    })
+    .send("Logged out successfully");
 };
