@@ -3,12 +3,14 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const bodyParser = require("body-parser");
+const cookieParser = require("cookie-parser");
 
 const { user } = require("./routes/user");
 
 const app = express();
 
 app.use(bodyParser.json());
+app.use(cookieParser());
 app.use(cors());
 
 app.use(user);
