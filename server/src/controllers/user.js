@@ -57,12 +57,7 @@ exports.login = async (req, res) => {
 };
 
 exports.logout = (req, res) => {
-  res
-    .status(200)
-    .clearCookie("token", null, {
-      httpOnly: true,
-    })
-    .send("Logged out successfully");
+  res.status(200).clearCookie("token").send("Logged out successfully");
 };
 
 exports.getLoggedInUser = async (req, res) => {
