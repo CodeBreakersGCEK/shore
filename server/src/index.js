@@ -4,7 +4,6 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
-const session = require("express-session");
 
 const { user } = require("./routes/user");
 
@@ -13,19 +12,6 @@ const app = express();
 app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(cors({ credentials: true }));
-app.use(
-  session({
-    resave: false,
-    secret: "secret",
-    saveUninitialized: false,
-    cookie: {
-      maxAge: 1000 * 60 * 60,
-      httpOnly: true,
-      secure: false,
-      sameSite: "none",
-    },
-  })
-);
 
 app.use(user);
 
