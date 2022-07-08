@@ -7,6 +7,8 @@ const ContextProvider = (props) => {
   const [imageUrl, setImageUrl] = useState(
     "https://dragonball.guru/wp-content/uploads/2021/01/goku-dragon-ball-guru.jpg"
   );
+  const [sign, setSign] = useState(true);
+  const [isLogging, setIsLogging] = useState(false);
 
   const setNameFn = (data) => {
     setName(data);
@@ -20,6 +22,14 @@ const ContextProvider = (props) => {
     setImageUrl(data);
   };
 
+  const setSignFn = (data) => {
+    setSign(data);
+  };
+
+  const setIsLoggingFn = (data) => {
+    setIsLogging(data);
+  };
+
   const ContextData = {
     user: {
       name: name,
@@ -28,6 +38,12 @@ const ContextProvider = (props) => {
       setId: setIdFn,
       imageUrl: imageUrl,
       setImageUrl: setImageUrlFn,
+      isLogging: isLogging,
+      setIsLogging: setIsLoggingFn,
+    },
+    ui: {
+      sign: sign,
+      setSign: setSignFn,
     },
   };
 

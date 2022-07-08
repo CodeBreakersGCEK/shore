@@ -8,6 +8,12 @@ const Context = createContext({
     setId: () => {},
     imageUrl: "",
     setImageUrl: () => {},
+    isLogging: false,
+    setIsLogging: () => {},
+  },
+  ui: {
+    sign: false,
+    setSign: () => {},
   },
 });
 

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import NavContainer from "../components/Home/NavContainer";
 import PostContainer from "../components/Home/PostContainer";
 import RightContainer from "../components/Home/RightContainer";

@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import axios from "axios";
 import Context from "./../../Context/Context";
 import { IconContext } from "react-icons";
 import Post from "../Post/Post";
@@ -6,6 +7,16 @@ import { BsArrowUpSquare } from "react-icons/bs";
 
 const PostContainer = () => {
   const UserCtx = useContext(Context).user;
+  const test = async () => {
+    try {
+      const response = await axios.get("https://shore-server.herokuapp.com");
+      console.log(response);
+    } catch (e) {
+      alert(e);
+    }
+  };
+
+  test();
 
   return (
     <div className="grow self-start min-w-[25rem] max-w-[38rem]  max-m-[3rem] min-m-[1rem] mx-[3vw] ">

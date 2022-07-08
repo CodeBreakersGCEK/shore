@@ -4,6 +4,7 @@ import { BiComment } from "react-icons/bi";
 import { IconContext } from "react-icons/lib/esm/iconContext";
 
 const Post = (props) => {
+  
   return (
     <li className="bg-foreground mb-[2rem] rounded-[0.4rem] p-[0.8rem] flex flex-col ">
       <div>
@@ -32,20 +33,16 @@ const Post = (props) => {
           className="rounded-[0.3rem]"
           alt="Post Image"
         />
-        <div className="flex justify-around h-[3rem] border-b-[2px] border-background text-[1rem] font-normal">
+        <div className="flex justify-around h-[3rem] border-b-[2px] border-background text-[0.8rem] font-normal">
           <div className="flex items-center justify-center">
-            <IconContext.Provider value={{ size: "1.4rem", color: "#a3a3a3" }}>
-              <AiOutlineHeart />
-            </IconContext.Provider>
-            <p className="ml-[0.2rem] mb-[0.2rem] text-neutral-400 poppinsText">
+            <AiOutlineHeart size={"1.4rem"} color={"#a3a3a3"} />
+            <p className="ml-[0.2rem] mb-[0rem] text-neutral-400 poppinsText">
               {props.likes} Likes
             </p>
           </div>
           <div className="flex items-center justify-center">
-            <IconContext.Provider value={{ size: "1.4rem", color: "#a3a3a3" }}>
-              <BiComment />
-            </IconContext.Provider>
-            <p className="ml-[0.2rem] mb-[0.2rem] text-neutral-400 poppinsText">
+            <BiComment size={"1.4rem"} color={"#a3a3a3"} />
+            <p className="ml-[0.2rem] text-neutral-400 poppinsText">
               {props.comments} Comments
             </p>
           </div>
