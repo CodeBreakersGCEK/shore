@@ -6,7 +6,7 @@ const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 
 const { user } = require("./routes/user");
-
+const connectDB = require("./config/database_config");
 const app = express();
 
 app.use(bodyParser.json());
@@ -17,16 +17,8 @@ app.use(user);
 
 const PORT = process.env.PORT || 4000;
 
-mongoose
-  .connect(process.env.DB_URL, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
-  .then(console.log("Connected to database"))
-  .catch((err) => {
-    console.log(err);
-    process.exit(1);
-  });
+// Database connection
+connectDB();
 
 app.get("/", (req, res) => {
   res.json({ message: "Hello World" });
