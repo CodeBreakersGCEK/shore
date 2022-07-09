@@ -26,4 +26,4 @@ const registerValidation = (data) => {
 
 
 
-modules.exports.registerValidation = registerValidation;
+module.exports.registerValidation = registerValidation;

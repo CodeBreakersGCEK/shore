@@ -24,7 +24,9 @@ router.post('/register', async(req, res) => {
     const hashedPassword = await bcrypt.hash(req.body.password, salt);
 
     const user = new User({
-        name: req.body.name,
+        firstName: req.body.firstName,
+        lastName: req.body.lastName,
+        userName: req.body.userName,
         email: req.body.email,
         password: hashedPassword
     })
@@ -35,3 +37,6 @@ router.post('/register', async(req, res) => {
         res.status(400).send(err);
     }
 })
+
+
+module.exports = router;
