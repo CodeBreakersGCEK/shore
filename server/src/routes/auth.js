@@ -19,6 +19,15 @@ router.post('/register', async(req, res) => {
     if (emailExist){
         return  res.status(400).send("Email already Exists.!!")
     } 
+
+    //CHECK IF USERNAME ALREADY TAKEN
+    const usernameExist = await User.findOne(
+        {userName: req.body.userName}
+    );
+    if (usernameExist){
+        return  res.status(400).send("Username already taken.!!\nPlease try another username.")
+    }
+
     //Hash the password
     const salt = await bcrypt.genSalt(10);
     const hashedPassword = await bcrypt.hash(req.body.password, salt);
@@ -44,13 +53,24 @@ router.post('/login', async (req, res) => {
     if (error){
         return res.status(400).send(error.details[0].message);
     } 
-    // CHECK IF USER EXISTS
-    const user = await User.findOne(
-        {email: req.body.email}
-    );
-    if ( !user ){
-        return  res.status(400).send("User with Email doesnot Exists.!!")
-    } 
+    // CHECK IF USER EXISTS USING EMAIL
+    if(req.body.email){
+        var user = await User.findOne(
+            {email: req.body.email}
+        );
+        if ( !user ){
+            return  res.status(400).send("User with Email doesnot Exists.!!")
+        } 
+    }
+    else if(req.body.userName){
+        var user = await User.findOne(
+            {userName: req.body.userName}
+        );
+        if ( !user ){
+            return  res.status(400).send("User with Username doesnot Exists.!!")    
+        }
+    }
+    
     // CHECK IF PASSWORD IS CORRECT
     const validPass = await bcrypt.compare(req.body.password, user.password);
     if (!validPass){
