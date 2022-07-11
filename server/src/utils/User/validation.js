@@ -32,7 +32,6 @@ const loginValidation = (data) => {
             .email(),
         userName: Joi.string()
             .min(4) ,
-                
         password: Joi.string()
             .min(6)
             .required(),
