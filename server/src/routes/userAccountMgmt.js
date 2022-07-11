@@ -35,5 +35,15 @@ router.patch('/:id',verify, async (req, res) => {
     }
     
 });
+// User can delete their account
+router.delete('/:id',verify, async (req, res) => {
+    try{
+        const user = await User.findByIdAndDelete(req.params.id);
+        if (!user) return res.status(404).send('The user with the given ID was not found.');
+        res.send("User deleted successfully");
+    }catch(err){
+        res.status(400).send(err);
+    }
+});
 
 module.exports = router;
