@@ -10,13 +10,22 @@ const SignUpContainer = () => {
   const [userName, setUserName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const userCtx = useContext(Context).user;
+  const UserCtx = useContext(Context).user;
   const Navigate = useNavigate();
 
-  userCtx.setIsLogging(true);
+  UserCtx.setIsLogging(true);
 
   const validateForm = () => {
     return firstName && lastName && userName && email && password;
+  };
+
+  const setData = (response) => {
+    UserCtx.setToken(response.data.token);
+    UserCtx.setFirstName(response.data.user.firstName);
+    UserCtx.setLastName(response.data.user.lastName);
+    UserCtx.setId(response.data.user._id);
+    UserCtx.setUserName(response.data.user.userName);
+    UserCtx.setEmail(response.data.user.email);
   };
 
   const submitHandler = async (event) => {
@@ -31,8 +40,9 @@ const SignUpContainer = () => {
         password,
       });
       console.log(response);
+      setData(response);
       alert("You are Registered");
-      Navigate("/");
+      Navigate("/signin");
     } catch (e) {
       alert(e);
     }

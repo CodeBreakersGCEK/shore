@@ -9,6 +9,10 @@ const authRoute = require('./routes/auth');
 const userAccountMgmtRoute = require('./routes/userAccountMgmt');
 
 const app = express();
+
+const cors = require("cors");
+app.use(cors());
+
 // Middlewares
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));

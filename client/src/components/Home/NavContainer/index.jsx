@@ -15,7 +15,7 @@ const NavContainer = () => {
   return (
     <div className="self-start w-[15rem] ml-[3vw] justify-self-start max550:hidden ">
       {/* Profile Container */}
-      <Link to={`/profile`}>
+      <Link to={`/${UserCtx.userName}`}>
         <div className="h-[5rem] bg-foreground  rounded-[0.4rem] flex  items-center overflow-hidden pl-[1.6rem] max1000:pl-[1rem] max800:pl-[0.8rem]">
           <img
             src={UserCtx.imageUrl}
@@ -24,10 +24,10 @@ const NavContainer = () => {
           />
           <div className="flex flex-col overflow-hidden ml-[0.5rem] text-fontPrimary2 poppinsText">
             <span className="text-[0.95rem] font-bold max800:text-[0.7rem]">
-              {UserCtx.name}
+              {UserCtx.firstName} {UserCtx.lastName}
             </span>
             <span className="w-[6rem] text-[0.75rem] max800:text-[0.6rem] max800:w-[4rem]">
-              @{UserCtx.id}
+              @{UserCtx.userName}
             </span>
           </div>
         </div>

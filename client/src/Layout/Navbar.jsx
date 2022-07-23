@@ -31,7 +31,7 @@ const Navbar = () => {
               </button>
             </div>
           ) : (
-            "jbhuhthbvhb"
+            ""
           )}
           {/* Upload Button */}
           {!ui.sign ? (

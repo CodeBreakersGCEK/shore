@@ -1,32 +1,47 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
+import Context from "../../Context/Context";
 import FieldLi from "./FieldLi";
 
 const SignInContainer = () => {
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
+  const UserCtx = useContext(Context).user;
+
   const Navigate = useNavigate();
 
   const validateForm = () => {
     return userName && password;
   };
 
+  const setData = (response) => {
+    UserCtx.setToken(response.data.token);
+    UserCtx.setFirstName(response.data.user.firstName);
+    UserCtx.setLastName(response.data.user.lastName);
+    UserCtx.setId(response.data.user._id);
+    UserCtx.setUserName(response.data.user.userName);
+    UserCtx.setEmail(response.data.user.email);
+  };
+
   const submitHandler = async (event) => {
     event.preventDefault();
 
     try {
-      const response = await axios.post("http://localhost:4000/login", {
-        userName,
-        password,
-      });
+      const response = await axios.post(
+        "http://localhost:4000/api/user/login",
+        {
+          userName,
+          password,
+        }
+      );
+
       console.log(response);
-      // setUserName("");
-      // setPassword("");
+      setData(response);
       alert("You are Logged In");
       Navigate("/");
     } catch (e) {
-      alert(e);
+      console.log(e.message);
     }
   };
 

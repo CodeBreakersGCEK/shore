@@ -8,12 +8,6 @@ import { BsArrowUpSquare } from "react-icons/bs";
 const PostContainer = () => {
   const UserCtx = useContext(Context).user;
   const test = async () => {
-    try {
-      const response = await axios.get("https://shore-server.herokuapp.com");
-      console.log(response);
-    } catch (e) {
-      alert(e);
-    }
   };
 
   test();
