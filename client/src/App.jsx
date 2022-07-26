@@ -7,7 +7,6 @@ import { Home, NotFound, Profile, SignUp, SignIn } from "./pages";
 
 const App = () => {
   const UserCtx = useContext(Context).user;
-  const ok = "harsh12";
 
   return (
     <Layout>

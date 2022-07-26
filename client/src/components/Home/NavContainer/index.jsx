@@ -12,6 +12,8 @@ import NavLink from "./NavLink";
 const NavContainer = () => {
   const UserCtx = useContext(Context).user;
 
+  console.log(UserCtx);
+
   return (
     <div className="self-start w-[15rem] ml-[3vw] justify-self-start max550:hidden ">
       {/* Profile Container */}

@@ -2,12 +2,22 @@ import { useState } from "react";
 import Context from "./Context";
 
 const ContextProvider = (props) => {
-  const [firstName, setFirstName] = useState("Harsh");
-  const [lastName, setLastName] = useState("Keshri");
-  const [userName, setUserName] = useState("harsh12");
-  const [email, setEmail] = useState("");
-  const [token, setToken] = useState("");
-  const [id, setId] = useState("airbornharsh");
+  const [firstName, setFirstName] = useState(
+    window.sessionStorage.getItem("firstName_social")
+  );
+  const [lastName, setLastName] = useState(
+    window.sessionStorage.getItem("lastName_social")
+  );
+  const [userName, setUserName] = useState(
+    window.sessionStorage.getItem("userName_social")
+  );
+  const [email, setEmail] = useState(
+    window.sessionStorage.getItem("email_social")
+  );
+  const [token, setToken] = useState(
+    window.sessionStorage.getItem("token_social")
+  );
+  const [id, setId] = useState(window.sessionStorage.getItem("id_social"));
   const [imageUrl, setImageUrl] = useState(
     "https://dragonball.guru/wp-content/uploads/2021/01/goku-dragon-ball-guru.jpg"
   );
